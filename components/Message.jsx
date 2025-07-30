@@ -3,6 +3,11 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import Markdown from "react-markdown";
 import Prism from "prismjs";
+// import "prismjs/components/prism-python";
+// import "prismjs/components/prism-javascript";
+// import "prismjs/components/prism-jsx";
+// import "prismjs/components/prism-bash";
+// import "prismjs/components/prism-css";
 import toast from "react-hot-toast";
 
 const Message = ({ role, content }) => {
@@ -85,6 +90,27 @@ const Message = ({ role, content }) => {
               />
               <div className="space-y-4 w-full overflow-scroll">
                 <Markdown>{content}</Markdown>
+                {/* <Markdown
+  components={{
+    code({ node, inline, className, children, ...props }) {
+      const match = /language-(\w+)/.exec(className || '');
+      const language = match ? match[1] : 'text';
+      return !inline ? (
+        <pre className={`language-${language}`}>
+          <code className={`language-${language}`} {...props}>
+            {children}
+          </code>
+        </pre>
+      ) : (
+        <code className={className} {...props}>
+          {children}
+        </code>
+      );
+    }
+  }}
+>
+  {content}
+</Markdown> */}
               </div>
             </>
           )}

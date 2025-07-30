@@ -13,12 +13,12 @@ const ChatLabel = ({ openMenu, setOpenMenu, id, name }) => {
     setSelectedChat(chatData);
     console.log(chatData);
   };
-
+// the api hits the route.js file in api folder where the route is created that communicates with the database.
   const renameHandler = async () => {
     try {
       const newName = prompt("Enter new name");
       if (!newName) return;
-      const { data } = await axios.post("/api/chat/rename", {
+      const { data } = await axios.post("/api/chat/rename", {   //this endpoint is created pointing the route.js in filesystem structure starting with api folder (since nextjs use filesystem structure for routing)
         chatId: id,
         name: newName,
       });
